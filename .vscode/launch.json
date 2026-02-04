@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MsvcItemsApplication<msvc-items>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.computerey.springcloud.msvc.items.MsvcItemsApplication",
+            "projectName": "msvc-items",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

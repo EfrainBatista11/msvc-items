@@ -1,0 +1,12 @@
+{
+    "java.compile.nullAnalysis.mode": "disabled",
+    "cSpell.words": [
+        "computerey",
+        "loadbalancer",
+        "msvc",
+        "openfeign",
+        "projectreactor",
+        "webflux"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
+}
