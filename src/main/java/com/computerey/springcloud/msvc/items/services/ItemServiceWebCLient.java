@@ -31,7 +31,6 @@ public class ItemServiceWebCLient implements ItemService {
         return this.client
                 .build()
                 .get()
-                .uri("/api/products")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToFlux(Product.class)
@@ -45,7 +44,7 @@ public class ItemServiceWebCLient implements ItemService {
         Map<String, Long> params = new HashMap<>();
         params.put("id", id);
         try {
-            return Optional.of(this.client.build().get().uri("/api/products/{id}", params)
+            return Optional.of(this.client.build().get().uri("/{id}", params)
                     .accept(MediaType.APPLICATION_JSON)
                     .retrieve()
                     .bodyToMono(Product.class)

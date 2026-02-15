@@ -11,9 +11,9 @@ import com.computerey.springcloud.msvc.items.models.Product;
 @FeignClient(name = "msvc-products")
 public interface ProductFeignClient {
     
-    @GetMapping("/api/products")
+    @GetMapping
     List<Product> findAll();
 
-    @GetMapping("/api/products/{id}")
+    @GetMapping("/{id}")
     Product details(@PathVariable Long id);
 }

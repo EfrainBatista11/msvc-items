@@ -7,6 +7,8 @@ import java.util.Optional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.computerey.springcloud.msvc.items.models.Item;
@@ -23,7 +25,10 @@ public class ItemController {
     }
 
     @GetMapping
-    public List<Item> list() {
+    public List<Item> list(@RequestParam(name = "name", required = false) String name,
+        @RequestHeader(name = "token-request", required = false) String token){
+            IO.println(name);
+            IO.println(token);
         return service.findAll();
     }
 
@@ -35,7 +40,7 @@ public class ItemController {
             return ResponseEntity.ok(itemOpt.get());
         } 
             return ResponseEntity.status(404)
-            .body(Collections.singletonMap("message", "No existe el producto en el microservicio msvc-products"));
+            .body(Collections.singletonMap("message", "No existe el producto en el microservice msvc-products"));
     }
     
 }
