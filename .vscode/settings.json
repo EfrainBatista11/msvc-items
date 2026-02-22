@@ -1,6 +1,7 @@
 {
     "java.compile.nullAnalysis.mode": "disabled",
     "cSpell.words": [
+        "circuitbreaker",
         "computerey",
         "loadbalancer",
         "msvc",

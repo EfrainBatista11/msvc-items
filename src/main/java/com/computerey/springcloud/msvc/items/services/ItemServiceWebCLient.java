@@ -43,16 +43,17 @@ public class ItemServiceWebCLient implements ItemService {
     public Optional<Item> findById(Long id) {
         Map<String, Long> params = new HashMap<>();
         params.put("id", id);
-        try {
+        // La idea que ocurra el error y se maneja en el camino alternativo del CircuitBreaker
+        // try {
             return Optional.of(this.client.build().get().uri("/{id}", params)
                     .accept(MediaType.APPLICATION_JSON)
                     .retrieve()
                     .bodyToMono(Product.class)
                     .map(product -> new Item(product, new Random().nextInt(10) + 1))
                     .block());
-        } catch (WebClientResponseException e) {
-            return Optional.empty();
-        }
+       // } catch (WebClientResponseException e) {
+      //     return Optional.empty();
+       // }
 
     }
 
