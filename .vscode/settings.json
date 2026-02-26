@@ -7,6 +7,7 @@
         "msvc",
         "openfeign",
         "projectreactor",
+        "timelimiter",
         "webflux"
     ],
     "java.configuration.updateBuildConfiguration": "automatic"
